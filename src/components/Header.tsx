@@ -16,7 +16,7 @@ export function Header({ tasksCounter }: HeaderProps) {
       <Image source={logoImg} />
       
       <View style={styles.tasks}>
-        <Text style={styles.tasksCounter}>Olá, você tem </Text>
+        <Text style={styles.tasksCounter}>Você tem </Text>
         <Text style={styles.tasksCounterBold}>{tasksCounterText}</Text>
       </View>
     </View>
@@ -28,14 +28,14 @@ const styles = StyleSheet.create({
     paddingTop: getStatusBarHeight(true) + 16,
     paddingHorizontal: 24,
     paddingBottom: 60,
-    backgroundColor: '#3d3d3d',
+    backgroundColor: '#8257E5',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row'
   },
   tasks: {
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'row'
   },
   tasksCounter: {
     fontSize: 15,

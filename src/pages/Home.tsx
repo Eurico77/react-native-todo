@@ -30,6 +30,7 @@ export function Home() {
         tasks={tasks} 
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask} 
+      
       />
     </View>
   )
@@ -38,6 +39,6 @@ export function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EBEBEB'
+    backgroundColor: '#EBECEF'
   }
 })
