@@ -1,10 +1,17 @@
 import React from 'react';
-import { FlatList, Image, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import {
+  FlatList,
+  Image,
+  TouchableOpacity,
+  View,
+  Text,
+  StyleSheet,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { ItemWrapper } from './ItemWrapper';
 
-import trashIcon from '../assets/icons/trash/trash.png'
+import trashIcon from '../assets/icons/trash/trash.png';
 
 export interface Task {
   id: number;
@@ -12,17 +19,21 @@ export interface Task {
   done: boolean;
 }
 
-interface TasksListProps{
+interface TasksListProps {
   tasks: Task[];
   toggleTaskDone: (id: number) => void;
   removeTask: (id: number) => void;
 }
 
-export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps) {
+export function TasksList({
+  tasks,
+  toggleTaskDone,
+  removeTask,
+}: TasksListProps) {
   return (
     <FlatList
       data={tasks}
-      keyExtractor={item => String(item.id)}
+      keyExtractor={(item) => String(item.id)}
       contentContainerStyle={{ paddingBottom: 24 }}
       showsVerticalScrollIndicator={false}
       renderItem={({ item, index }) => {
@@ -35,22 +46,19 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
                 style={styles.taskButton}
                 onPress={() => toggleTaskDone(item.id)}
               >
-                <View 
+                <View
                   testID={`marker-${index}`}
-                  style={[styles.taskMarker, item.done && styles.taskMarkerDone]}
+                  style={[
+                    styles.taskMarker,
+                    item.done && styles.taskMarkerDone,
+                  ]}
                 >
-                  { item.done && (
-                    <Icon 
-                      name="check"
-                      size={12}
-                      color="#FFF"
-                    />
-                  )}
+                  {!!item.done && <Icon name='check' size={12} color='#FFF' />}
                 </View>
 
-                <Text 
+                <Text
                   testID={`title-${index}`}
-                  style={ item.done && styles.taskTextDone }
+                  style={item.done && styles.taskTextDone}
                 >
                   {item.title}
                 </Text>
@@ -65,15 +73,14 @@ export function TasksList({ tasks, toggleTaskDone, removeTask }: TasksListProps)
               <Image source={trashIcon} />
             </TouchableOpacity>
           </ItemWrapper>
-        )
+        );
       }}
       style={{
-        marginTop: 32
+        marginTop: 32,
       }}
     />
-  )
+  );
 }
-
 const styles = StyleSheet.create({
   taskButton: {
     flex: 1,

@@ -10,32 +10,35 @@ export function TodoInput({ addTask }: TodoInputProps) {
   const [task, setTask] = useState('');
 
   function handleAddNewTask() {
+    if (!task) return;
+
     addTask(task);
     setTask('');
   }
 
   return (
     <View style={styles.inputContainer}>
-      <TextInput 
-        style={styles.input} 
-        placeholder="Adicione uma tarefa"
-        placeholderTextColor="#B2B2B2"
-        returnKeyType="send"
-        selectionColor="#666666"
-        onChangeText={text => setTask(text)}
+      <TextInput
+        style={styles.input}
+        placeholder='Adicionar novo todo...'
+        placeholderTextColor='#B2B2B2'
+        returnKeyType='send'
+        selectionColor='#666666'
+        value={task}
+        onSubmitEditing={handleAddNewTask}
+        onChangeText={setTask}
       />
       <TouchableOpacity
-        testID="add-new-task-button"
+        testID='add-new-task-button'
         activeOpacity={0.7}
         style={styles.addButton}
         onPress={handleAddNewTask}
       >
-        <Icon name="chevron-right" size={24} color="#B2B2B2" />
+        <Icon name='chevron-right' size={24} color='#B2B2B2' />
       </TouchableOpacity>
     </View>
-  )
+  );
 }
-
 const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: '#FFF',
