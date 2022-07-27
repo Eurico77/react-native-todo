@@ -9,15 +9,15 @@ interface HeaderProps {
 }
 
 export function Header({ tasksCounter }: HeaderProps) {
-  // const tasksCounterText = TODO render 'tarefa' if tasksCounter equals 1, otherwise render 'tarefas'
+  const tasksCounterText = tasksCounter > 0 ? `${tasksCounter} tarefa${tasksCounter > 1 ? 's' : ''}` : 'Nenhuma tarefa';
   
   return (
     <View style={styles.container}>
       <Image source={logoImg} />
       
       <View style={styles.tasks}>
-        <Text style={styles.tasksCounter}>Você tem </Text>
-        {/* <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text> */}
+        <Text style={styles.tasksCounter}>Olá, você tem </Text>
+        <Text style={styles.tasksCounterBold}>{tasksCounterText}</Text>
       </View>
     </View>
   )
@@ -28,14 +28,14 @@ const styles = StyleSheet.create({
     paddingTop: getStatusBarHeight(true) + 16,
     paddingHorizontal: 24,
     paddingBottom: 60,
-    backgroundColor: '#8257E5',
+    backgroundColor: '#3d3d3d',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row'
   },
   tasks: {
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
   tasksCounter: {
     fontSize: 15,
