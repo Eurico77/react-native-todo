@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { Alert, StyleSheet, View } from "react-native";
+import React, { useState } from 'react';
+import { Alert, StyleSheet, View } from 'react-native';
 
-import { Header } from "../components/Header";
-import { Task, TasksList } from "../components/TasksList";
-import { TodoInput } from "../components/TodoInput";
+import { Header } from '../components/Header';
+import { Task, TasksList } from '../components/TasksList';
+import { TodoInput } from '../components/TodoInput';
 
 export type EditTaskArgs = {
   taskId: number;
   newTask: string;
 };
-
 
 export function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -19,8 +18,8 @@ export function Home() {
 
     if (taskAlreadyExists) {
       return Alert.alert(
-        "Task already exists",
-        "Please enter a different task"
+        'Task already exists',
+        'Please enter a different task'
       );
     }
     const newTask = {
@@ -45,14 +44,14 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
-    Alert.alert("Remove item", "Are you sure you want to remove item", [
+    Alert.alert('Remove item', 'Are you sure you want to remove item', [
       {
-        style: "cancel",
-        text: "Cancel",
+        style: 'cancel',
+        text: 'Cancel',
       },
       {
-        style: "destructive",
-        text: "Remove",
+        style: 'destructive',
+        text: 'Remove',
         onPress: () => {
           setTasks((oldState) => oldState.filter((task) => task.id !== id));
         },
@@ -91,6 +90,6 @@ export function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EBEBEB",
+    backgroundColor: '#EBEBEB',
   },
 });

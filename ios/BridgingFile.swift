@@ -2,7 +2,7 @@
 //  BridgingFile.swift
 //  todo
 //
-//  Created by Vinicius Fraga Modesto on 01/07/21.
+//  Created by Eurico Magalhães on 28/07/22.
 //
 
 import Foundation

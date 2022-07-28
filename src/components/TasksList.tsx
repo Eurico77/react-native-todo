@@ -46,7 +46,7 @@ export function TasksList({
         );
       }}
       style={{
-        marginTop: 32,
+        marginTop: 32
       }}
     />
   );

@@ -62,7 +62,7 @@ export function TaskItem({
 
   return (
     <View style={styles.container}>
-      <View style={styles.infonContainer}>
+      <View style={styles.infoContainer}>
         <TouchableOpacity
           testID={`button-${index}`}
           activeOpacity={0.7}
@@ -122,10 +122,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  infonContainer: {
+  infoContainer: {
     flex: 1,
+    paddingVertical: 16,
   },
-
   taskButton: {
     flex: 1,
     paddingHorizontal: 24,
