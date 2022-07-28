@@ -53,7 +53,10 @@ describe('Home', () => {
       borderColor: '#B2B2B2',
       marginRight: 15
     });
-  
+    expect(taskElement).toHaveStyle({
+      color: '#666',
+    });
+
     fireEvent.press(taskElement);
 
     expect(markerElement).toHaveStyle({

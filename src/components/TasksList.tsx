@@ -58,7 +58,7 @@ export function TasksList({
 
                 <Text
                   testID={`title-${index}`}
-                  style={item.done && styles.taskTextDone}
+                  style={[styles.taskText, item.done && styles.taskTextDone]}
                 >
                   {item.title}
                 </Text>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     borderRadius: 4,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   taskMarker: {
     height: 16,
@@ -99,11 +99,11 @@ const styles = StyleSheet.create({
     borderColor: '#B2B2B2',
     marginRight: 15,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   taskText: {
     color: '#666',
-    fontFamily: 'Inter-Medium'
+    fontFamily: 'Inter-Medium',
   },
   taskMarkerDone: {
     height: 16,
@@ -112,11 +112,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#1DB863',
     marginRight: 15,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   taskTextDone: {
     color: '#1DB863',
     textDecorationLine: 'line-through',
-    fontFamily: 'Inter-Medium'
-  }
-})
+    fontFamily: 'Inter-Medium',
+  },
+});
